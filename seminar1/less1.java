@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 
 public class less1 {
+    
     public static void main(String[] args) {
         int x = EnterNumber();
         System.out.println("Summa "+CalculateSum(x));
