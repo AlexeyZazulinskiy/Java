@@ -32,11 +32,11 @@ public class less1 {
         Sort(hMap);
     }
 
-    static Map<Integer, String> Enter(){
+    static Map<Integer, String> Enter() {
         Map<Integer, String> hmap = new HashMap<>();
         hmap.put(123456, "Иванов");
         hmap.put(321456, "Васильев");
-        hmap.put(234561, "Петрова");    
+        hmap.put(234561, "Петрова");
         hmap.put(234432, "Иванов");
         hmap.put(654321, "Петрова");
         hmap.put(345678, "Иванов");
@@ -45,44 +45,44 @@ public class less1 {
         return hmap;
     }
 
-    static void Sort(Map<Integer, String> hmap){
+    static void Sort(Map<Integer, String> hmap) {
         TreeMap<String, Integer> tmap = new TreeMap<>();
-        for ( var item : hmap.entrySet()) {
+        for (var item : hmap.entrySet()) {
             tmap.putIfAbsent(item.getValue(), 0);
-            tmap.put(item.getValue(), tmap.get(item.getValue()) +1);
+            tmap.put(item.getValue(), tmap.get(item.getValue()) + 1);
         }
         ArrayList<Integer> list1 = new ArrayList();
-        for ( var item : tmap.entrySet()) {
+        for (var item : tmap.entrySet()) {
             if (list1.contains(item.getKey())) {
-            }    else{
-            list1.add( item.getValue());
-        }  
-    }
-        
+            } else {
+                list1.add(item.getValue());
+            }
+        }
+
         Collections.sort(list1, Collections.reverseOrder());
         ArrayList<String> listName = new ArrayList();
-        for (int i =0; i < list1.size(); i++){
-            for ( var item : tmap.entrySet()){
-            if (list1.get(i) == item.getValue()){
-                listName.add(item.getKey());
+        for (int i = 0; i < list1.size(); i++) {
+            for (var item : tmap.entrySet()) {
+                if (list1.get(i) == item.getValue()) {
+                    listName.add(item.getKey());
+                }
             }
-            }   
         }
-        Output (hmap,listName);
+        Output(hmap, listName);
     }
 
-    static void Output(Map<Integer, String> hmap, ArrayList<String> listName){
+    static void Output(Map<Integer, String> hmap, ArrayList<String> listName) {
         StringBuilder str = new StringBuilder();
-        for (int i =0; i < listName.size(); i++){
+        for (int i = 0; i < listName.size(); i++) {
             str.append(listName.get(i));
-            for ( var item : hmap.entrySet()){ 
-            if (Objects.equals(listName.get(i), item.getValue())) {
-                str.append(", " + item.getKey() );
+            for (var item : hmap.entrySet()) {
+                if (Objects.equals(listName.get(i), item.getValue())) {
+                    str.append(", " + item.getKey());
+                }
             }
-            } 
-         System.out.println(str); 
-         str.setLength(0);    
-        }    
+            System.out.println(str);
+            str.setLength(0);
+        }
 
     }
 }
