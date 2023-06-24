@@ -1,17 +1,12 @@
 package seminar5;
 
-import java.net.SocketImpl;
-import java.net.SocketPermission;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
-import java.util.Map.Entry;
-
-import javax.swing.plaf.metal.MetalBorders.ScrollPaneBorder;
 
 /*
 Реализуйте структуру телефонной книги с помощью HashMap.
@@ -58,7 +53,6 @@ public class less1 {
                 list1.add(item.getValue());
             }
         }
-
         Collections.sort(list1, Collections.reverseOrder());
         ArrayList<String> listName = new ArrayList();
         for (int i = 0; i < list1.size(); i++) {
@@ -68,10 +62,10 @@ public class less1 {
                 }
             }
         }
-        Output(hmap, listName);
+        Print(hmap, listName);
     }
 
-    static void Output(Map<Integer, String> hmap, ArrayList<String> listName) {
+    static void Print(Map<Integer, String> hmap, ArrayList<String> listName) {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < listName.size(); i++) {
             str.append(listName.get(i));
