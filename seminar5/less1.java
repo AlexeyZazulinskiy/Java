@@ -51,14 +51,14 @@ public class less1 {
             tmap.putIfAbsent(item.getValue(), 0);
             tmap.put(item.getValue(), tmap.get(item.getValue()) +1);
         }
-        HashMap mmap = new HashMap();
-        for ( var item : tmap.entrySet()) {
-            mmap.put(item.getValue(), 0);
-        }
         ArrayList<Integer> list1 = new ArrayList();
-        for ( var item : mmap.entrySet()) {
-            list1.add(((Entry<Integer, String>) item).getKey());
-        }       
+        for ( var item : tmap.entrySet()) {
+            if (list1.contains(item.getKey())) {
+            }    else{
+            list1.add( item.getValue());
+        }  
+    }
+        
         Collections.sort(list1, Collections.reverseOrder());
         ArrayList<String> listName = new ArrayList();
         for (int i =0; i < list1.size(); i++){
